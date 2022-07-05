@@ -1,0 +1,23 @@
+
+<div>
+<h1>{{title}}</h1>
+<table border="3">
+<nav>
+    
+    <tr>
+    <th><a [routerLink]="['/home']" [routerLinkActive]="['active']">Home</a></th>
+    &nbsp;
+    <th><a [routerLink]="['/taller']" [routerLinkActive]="['active']">Taller</a></th>
+    &nbsp;
+    <th><a [routerLink]="['/clientes']" [routerLinkActive]="['active']">Clientes</a></th>
+    &nbsp;
+    <th><a [routerLink]="['/proveedores']" [routerLinkActive]="['active']">Proveedores</a></th>
+    </tr>
+    
+</nav>
+</table>
+
+<router-outlet>
+</router-outlet>
+ 
+</div>

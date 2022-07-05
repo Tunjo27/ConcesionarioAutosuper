@@ -1,0 +1,22 @@
+<form #formCliente="ngForm" (ngSubmit)="onSubmit(formCliente)">
+    <label for="nombre">Nombre</label><br/>
+    <input type="text" name="nombre" #nombre="ngModel" [(ngModel)]="cliente.nombre" required/><br/>
+    <span *ngIf="nombre.touched && !nombre.valid">El nombre es obligatorio</span>
+
+    <label for="apellido">Apellido</label><br/>
+    <input type="text" name="apellido" #apellido="ngModel" [(ngModel)]="cliente.apellido" required/><br/>
+    <span *ngIf="apellido.touched && !apellido.valid">El apellido es obligatorio</span>
+
+    <label for="celular">Celular</label><br/>
+    <input type="number" name="celular" #celular="ngModel" [(ngModel)]="cliente.celular" required/><br/>
+    <span *ngIf="celular.touched && !celular.valid">El celular es obligatorio</span>
+
+    <label for="email">Email</label><br/>
+    <input type="text" name="email" #email="ngModel" [(ngModel)]="cliente.email" required/><br/>
+    <span *ngIf="email.touched && !email.valid">El email es obligatorio</span>
+    
+    <br/>
+    <input type="submit" value="Crear" [disabled]="!formCliente.form.valid">
+    <br/>
+</form>
+<button>Editar</button>

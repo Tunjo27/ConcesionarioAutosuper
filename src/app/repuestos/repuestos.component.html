@@ -1,0 +1,31 @@
+<form #formRepuesto="ngForm" (ngSubmit)="onSubmit(formRepuesto)">
+    <label for="nombre">Nombre</label><br/>
+    <input type="text" name="nombre" #nombre="ngModel" [(ngModel)]="repuesto.nombre" required/><br/>
+    <span *ngIf="nombre.touched && !nombre.valid">El nombre es obligatorio</span>
+
+    <label for="marca">Marca</label><br/>
+    <input type="text" name="marca" #marca="ngModel" [(ngModel)]="repuesto.marca" required/><br/>
+    <span *ngIf="marca.touched && !marca.valid">La marca es obligatoria</span>
+
+    <label for="precio">Precio</label><br/>
+    <input type="number" name="precio" #precio="ngModel" [(ngModel)]="repuesto.precio" required/><br/>
+    <span *ngIf="precio.touched && !precio.valid">El precio es obligatorio</span>
+
+    <label for="cantidad">Cantidad</label><br/>
+    <input type="number" name="cantidad" #cantidad="ngModel" [(ngModel)]="repuesto.cantidad" required/><br/>
+    <span *ngIf="cantidad.touched && !cantidad.valid">La cantidad es obligatoria</span>
+
+    <label for="proveedor">Proveedor</label><br/>
+    <input type="text" name="proveedor" #proveedor="ngModel" [(ngModel)]="repuesto.proveedor" required/><br/>
+    <span *ngIf="proveedor.touched && !proveedor.valid">El proveedor es obligatorio</span>
+
+    <br/>
+    <input type="submit" value="Agregar" [disabled]="!formRepuesto.form.valid">
+    <br/>
+</form>
+
+    <button (click)="updateRepuesto()">Editar</button>
+
+<app-repuestos-list
+        [repuesto]="repuesto"
+></app-repuestos-list>

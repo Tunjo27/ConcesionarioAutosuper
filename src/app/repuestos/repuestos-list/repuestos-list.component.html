@@ -1,0 +1,33 @@
+<div *ngIf="validacion; then volverTemplate else verTemplate"></div>
+
+<ng-template #volverTemplate>
+    <div>
+        <table border="1">
+            <tr>
+              <th>Nombre</th>
+              <td>{{repuesto.nombre}}</td>
+            </tr>
+            <tr>
+              <th>Marca</th>  
+              <td>{{repuesto.marca}}</td>
+            </tr>
+            <tr> 
+              <th>Precio</th>     
+              <td>{{repuesto.precio}}</td>
+            </tr>
+            <tr> 
+              <th>Cantidad</th>     
+              <td>{{repuesto.cantidad}}</td>
+            </tr>
+            <tr> 
+                <th>Proveedor</th>     
+                <td>{{repuesto.proveedor}}</td>
+              </tr>
+        </table>
+    </div>
+    <button (click)="back()">Cerrar</button>  
+</ng-template>
+
+<ng-template #verTemplate>
+    <button (click)="enter()">Ver datos agregados</button>   
+</ng-template>
